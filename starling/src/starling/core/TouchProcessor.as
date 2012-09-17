@@ -11,12 +11,12 @@
 package starling.core
 {
     import flash.geom.Point;
-    
     import starling.display.Stage;
     import starling.events.KeyboardEvent;
     import starling.events.Touch;
     import starling.events.TouchEvent;
     import starling.events.TouchPhase;
+    
 
     use namespace starling_internal;
     
@@ -150,6 +150,8 @@ package starling.core
                 mTouchMarker.moveMarker(globalX, globalY, mShiftDown);
                 mQueue.unshift([1, phase, mTouchMarker.mockX, mTouchMarker.mockY]);
             }
+			
+			if(TouchProcessorConfig.instaTouch) advanceTime(0);
         }
         
         private function processTouch(touchID:int, phase:String, globalX:Number, globalY:Number):void
