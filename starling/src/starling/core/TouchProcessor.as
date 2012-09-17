@@ -151,7 +151,7 @@ package starling.core
                 mQueue.unshift([1, phase, mTouchMarker.mockX, mTouchMarker.mockY]);
             }
 			
-			if(TouchProcessorConfig.instaTouch) advanceTime(0);
+			if(TouchProcessorConfig.instaTouch && phase == TouchPhase.BEGAN) advanceTime(0);
         }
         
         private function processTouch(touchID:int, phase:String, globalX:Number, globalY:Number):void
